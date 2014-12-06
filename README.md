@@ -2,7 +2,7 @@ exp4j_tld
 
 exp4j JEE JSP Tags
 
-Using JSTL and expression language:
+h1 Using JSTL and expression language:
 ```jsp
 
 <c:set var="expr_str" value="sin(x)" />

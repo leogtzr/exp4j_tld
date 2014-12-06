@@ -1,6 +1,6 @@
 # exp4j_tld
 
-# exp4j JEE JSP Tags
+## exp4j JEE JSP Tags
 
 ## Using JSTL and expression language:
 ```jsp
@@ -13,13 +13,13 @@
 </expr4j:expr>
 ```
 
-## Using exp4j jsp tag without tag body:
+## Without tag body:
 
 ```jsp
 <expr4j:expr expr="sin(x)" x="4" />
 ```
 
-## Using exp4j jsp tag with other tags:
+## With other tags:
 
 ```jsp
 <expr4j:expr x="2" y="3">
@@ -29,4 +29,12 @@
 </expr4j:expr>
 ```
 
+## Custom functions:
+```jsp
+	<expr4j:expr expr="fibonacci(x) + cos(y)^2" customFunction="${fibo}" x="8" y="2">
+	</expr4j:expr>
+```
+
 leogutierrezramirez@gmail.com
+
+frank.asseg@objecthunter.net

@@ -16,6 +16,10 @@
     <body>
 
         <h1>exp4j with jsp tags</h1>
+        
+        <a href="setcustonfunction.do">
+            Test custom function with exp4j jsp tags
+        </a>
 
         <c:set var="expr_str" value="sin(x)" />
         <c:set var="x" value="4" />

@@ -19,6 +19,8 @@ public class Exp4JTagHandler extends SimpleTagSupport
 implements DynamicAttributes {
     
     private String expr;
+    private Function customFunction;
+
     private Map<String, Object> tagsAttrs = new HashMap<String, Object>();
 
     @Override
@@ -32,11 +34,17 @@ implements DynamicAttributes {
             }
             
             ExpressionBuilder e = new ExpressionBuilder(expr);
+            
             for(String varName : tagsAttrs.keySet()) {
                 e.variable(varName);
             }
             
-            Expression expresionParser = e.build();
+            Expression expresionParser = null;
+            if(customFunction != null) {
+                expresionParser = e.function(customFunction).build();
+            } else {
+                expresionParser = e.build();
+            }
             
             for(String varName : tagsAttrs.keySet()) {
                 expresionParser.setVariable(varName, (Double)tagsAttrs.get(varName));
@@ -52,9 +60,15 @@ implements DynamicAttributes {
         this.expr = expr;
     }
     
+    public void setCustomFunction(Function customFunction) {
+        this.customFunction = customFunction;
+    }
+    
     @Override
     public void setDynamicAttribute(String uri, String localName, Object value) throws JspException {
         try {
+            System.out.println("localName: " + localName);
+            System.out.println("value: " + value);
             tagsAttrs.put(localName, Double.parseDouble(value.toString()));
         } catch(NumberFormatException ex) {
             throw new JspException(value.toString() + " -> incorrect numeric value.");

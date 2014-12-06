@@ -17,6 +17,12 @@
       <rtexprvalue>true</rtexprvalue>
       <type>java.lang.String</type>
     </attribute>
+    <attribute>
+      <name>customFunction</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>net.objecthunter.exp4j.function.Function</type>
+    </attribute>
     <dynamic-attributes>true</dynamic-attributes>
   </tag>
 </taglib>

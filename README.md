@@ -30,6 +30,25 @@
 ```
 
 ## Custom functions:
+
+```jsp
+<%
+Function fiboFunc = new Function("fibonacci", 1) {
+    @Override
+    public double apply(double ... args) {
+        double i = 1.0;
+        double j = 0.0;
+        for (int k = 1; k <= args[0]; k++) {
+            j = i + j;
+            i = j - i;
+        }
+        return j;
+    }
+};
+pageContext.setAttribute("fibo", fiboFunc);
+%>
+```
+
 ```jsp
 	<expr4j:expr expr="fibonacci(x) + cos(y)^2" customFunction="${fibo}" x="8" y="2">
 	</expr4j:expr>

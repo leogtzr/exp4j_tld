@@ -39,35 +39,12 @@ implements DynamicAttributes {
             Expression expresionParser = e.build();
             
             for(String varName : tagsAttrs.keySet()) {
-                // parser.addVariable(varName, (Double)tagsAttrs.get(varName));
                 expresionParser.setVariable(varName, (Double)tagsAttrs.get(varName));
             }
-            
             out.println(expresionParser.evaluate());
-            
-        /*.variables("x", "y")
-        .build()
-        .setVariable("x", 2.3)
-        .setVariable("y", 3.14);*/
-           //double result = e.evaluate();
-
-            /*Parser parser = new Parser();
-            for(String varName : tagsAttrs.keySet()) {
-                parser.addVariable(varName, (Double)tagsAttrs.get(varName));
-            }
-            parser.parse(expression); */
-            
-            // Parser parser = new Parser();
-            /*for(String varName : tagsAttrs.keySet()) {
-                parser.addVariable(varName, (Double)tagsAttrs.get(varName));
-            }*/
-            //parser.parse(expression); 
-            //out.println(parser.getNumericAnswer());
         } catch (java.io.IOException ex) {
             throw new JspException("Error in MathParseTagHandler tag", ex);
-        }// catch(ParsingException ex) {
-            //throw new JspException(ex.toString() + " in expression at: " + ex.getColumn(), ex);
-        //}*/
+        }
         
     }
 

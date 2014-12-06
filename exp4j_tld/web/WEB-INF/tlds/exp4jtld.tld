@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    exp4j tag library descriptor
+    Leo Gutierrez R. <leogutierrezramirez@gmail.com>
+-->
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>exp4jtld</short-name>
+  <uri>/WEB-INF/tlds/exp4jtld</uri>
+  <tag>
+    <name>expr</name>
+    <tag-class>com.exp4j.Exp4JTagHandler</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>expr</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+</taglib>

@@ -55,5 +55,3 @@ pageContext.setAttribute("fibo", fiboFunc);
 ```
 
 leogutierrezramirez@gmail.com
-
-frank.asseg@objecthunter.net
